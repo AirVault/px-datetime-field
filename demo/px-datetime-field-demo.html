@@ -15,13 +15,13 @@
 
 
 <!-- Imports for this component -->
- 
+
 <link rel="import" href="../px-datetime-field.html" />
 
 <!-- Demo DOM module -->
 <dom-module id="px-datetime-field-demo">
   <template>
- 
+
 
     <!-- Header -->
     <px-demo-header
@@ -65,7 +65,8 @@
             hide-icon="{{props.hideIcon.value}}"
             time-zone="{{props.timeZone.value}}"
             min-date="{{props.minDate.value}}"
-            max-date="{{props.maxDate.value}}">
+            max-date="{{props.maxDate.value}}"
+            hide-clear-button="{{props.hideClearButton.value}}">
         </px-datetime-field>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
@@ -151,7 +152,8 @@
               hideIcon: false,
               showTimeZone: "dropdown",
               timeZone: "UTC",
-              momentObj: null},
+              momentObj: null,
+              hideClearButton: "false"},
 
             { configName: "Predefined date",
               dateFormat: "MM/DD/YY",
@@ -165,7 +167,8 @@
               hideIcon: false,
               showTimeZone: "abbreviatedText",
               timeZone: "America/Los_Angeles",
-              momentObj: Px.moment() },
+              momentObj: Px.moment(),
+              hideClearButton: "false"},
 
             { configName: "Min/Max date",
               dateFormat: "DD/MM/YY",
@@ -179,7 +182,8 @@
               hideIcon: false,
               showTimeZone: "dropdown",
               timeZone: "America/New_York",
-              momentObj: Px.moment().startOf('day') },
+              momentObj: Px.moment().startOf('day'),
+              hideClearButton: "false"},
           ]
         }
       },
@@ -253,6 +257,12 @@
       },
 
       blockPastDates: {
+        type: Boolean,
+        defaultValue: false,
+        inputType: 'toggle'
+      },
+
+      hideClearButton: {
         type: Boolean,
         defaultValue: false,
         inputType: 'toggle'

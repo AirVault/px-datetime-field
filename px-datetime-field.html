@@ -81,6 +81,19 @@ Custom property | Description
               container-type="[[containerType]]">
             </px-datetime-entry>
           </template>
+          <template is="dom-if" if="[[!hideClearButton]]">
+            <div class="flex flex--row flex--right flex--middle clear-button-container">
+              <div class="clear-icon-container">
+
+                <px-icon
+                  id="icon"
+                  class="dt-icon-clear"
+                  icon="px-utl:close" on-tap="_clearClicked">
+                </px-icon>
+
+              </div>
+            </div>
+          </template>
         </div>
         <template is="dom-if" if="[[_showValidation(isValid, hideValidationMessage)]]">
           <div class="form-field__help validation-error dt-validation-text">{{_validationErrorMessage}}</div>
@@ -278,6 +291,13 @@ Custom property | Description
        * Specifies if the dropdown content should get hoisted to a container in order to escape its current stacking context
        */
        hoist: {
+        type: Boolean,
+        value: false
+      },
+      /**
+       * Specifies if we want to show a "clear selection" button
+       */
+      hideClearButton: {
         type: Boolean,
         value: false
       }
@@ -606,6 +626,17 @@ Custom property | Description
       }
       this._validateField();
       this.blur();
+    },
+
+    /**
+     * Method to be fired when the user clicks on the clear button
+     * @param evt - Event arguments
+     */
+    _clearClicked: function(evt) {
+      // we want to clear the object, and then we want to propagate the event
+      this.set('momentObj', null);
+      this.fire('px-moment-changed');
     }
+
   });
 </script>

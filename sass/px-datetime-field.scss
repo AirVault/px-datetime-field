@@ -19,6 +19,9 @@
 $inuit-enable-validation-states : true;
 @import "px-forms-design/_base.forms.scss";
 
+$inuit-enable-layout--right : true;
+@import 'px-layout-design/_objects.layout.scss';
+
 //component
 .dt-field-validation-wrapper {
   background-color: var(--px-datetime-field-background-color, transparent);
@@ -91,3 +94,33 @@ $inuit-enable-margins--small : true;
 $inuit-enable-margins--large : true;
 $inuit-enable-paddings--large : true;
 @import "px-spacing-design/_trumps.spacing.scss";
+
+.dt-icon-clear{
+  color: $gray10;
+  margin-top: 0.15rem;
+  margin-left: 0.15rem;
+
+  --iron-icon-width:0.8rem;
+  --iron-icon-height:0.8rem;
+}
+
+.clear-button-container{
+  width: 100%;
+}
+
+.dt-text-field .clear-icon-container {
+  background-color: $gray4;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.dt-text-field:hover .clear-icon-container {
+  display: inherit;
+}
+
+
+
+
