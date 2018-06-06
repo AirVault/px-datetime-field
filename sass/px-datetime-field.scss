@@ -112,13 +112,13 @@ $inuit-enable-paddings--large : true;
   background-color: $gray4;
   border-radius: 50%;
   cursor: pointer;
-  display: none;
+  visibility: hidden;
   height: 1.1rem;
   width: 1.1rem;
 }
 
 .dt-text-field:hover .clear-icon-container {
-  display: inherit;
+  visibility: inherit;
 }
 
 
