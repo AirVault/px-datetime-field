@@ -96,8 +96,7 @@ $inuit-enable-paddings--large : true;
 @import "px-spacing-design/_trumps.spacing.scss";
 
 .dt-icon-clear{
-  color: $gray10;
-  margin-top: 0.15rem;
+  color: $gray4;
   margin-left: 0.15rem;
 
   --iron-icon-width:0.8rem;
@@ -109,7 +108,7 @@ $inuit-enable-paddings--large : true;
 }
 
 .dt-text-field .clear-icon-container {
-  background-color: $gray4;
+  background-color: $gray10;
   border-radius: 50%;
   cursor: pointer;
   visibility: hidden;
